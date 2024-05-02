@@ -5,8 +5,20 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="alien" class = "org.example.Alien">
+<!--    <property name="age" value="21"></property>-->
+<!--    <property name="age" value="21" scope="prototype">will create a new object every
+ time the value is used</property>-->
+    <bean id="alien" class = "org.example.Alien" autowire="byType">
+<!--        using autowire ="byName" mean it will serch for the name
+ if the name of the object class is asking by will not match it will throw an error-->
+<!--constructor injection  order matters so index or type or name will work-->
+<!--        <constructor-arg value="21"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+<!--        <property name="lap" ref="lap1"/>-->
+        <!-- wiring with the laptop object lap1 -->
+    </bean>
+    <bean id="com1" class = "org.example.Laptop" primary="true">
 
     </bean>
-
+    <bean id ="com2" class="org.example.Desktop"/>
 </beans>

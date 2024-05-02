@@ -14,6 +14,7 @@ public class App
         //create a container
         ApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
         Alien obj= (Alien) context.getBean("alien");
+        System.out.println(obj.getAge());
         obj.code();
 //        System.out.println( "Hello World!" );
     }
